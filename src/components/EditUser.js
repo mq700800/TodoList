@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import useCustomHook from '../hooks/UseCustomHook';
 
-function EditUser({setIsEdit , updateEmployee , data , setData, setUpdateEmployee}) {
+function EditUser() {
+  const {setIsEdit , updateEmployee , data , setData, setUpdateEmployee} = useCustomHook();
+  
   const exists = {
     id:updateEmployee.id,
     firstname: updateEmployee.firstname,

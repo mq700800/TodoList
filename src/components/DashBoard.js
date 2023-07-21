@@ -8,16 +8,12 @@ function Dashboard() {
   const {
     setIsLogin,
     isEdit,
-    setIsEdit,
     isAdd,
     setIsAdd,
     data,
     setData,
-    updateEmployee,
-    setUpdateEmployee,
     handleEdit,
-    handleAdd,
-    handleDelete
+    handleDelete,
   } = useCustomHook();
   
  // to get data from local storage when the dashboard page first render
@@ -53,11 +49,11 @@ function Dashboard() {
    )
   if(isAdd)
   { 
-    return <AddUser setIsAdd={setIsAdd} handleAdd= {handleAdd} />
+    return <AddUser />
   }
   if(isEdit)
   {
-    return <EditUser setIsEdit={setIsEdit}  updateEmployee={updateEmployee} setUpdateEmployee={setUpdateEmployee} data={data} setData={setData}/>
+    return <EditUser />
 
   }
   if(!isAdd || !isEdit)
