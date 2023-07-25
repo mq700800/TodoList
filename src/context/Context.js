@@ -82,9 +82,8 @@ const handleDelete = (UserID) => {
     
   // AuthenticatedUsers who can have access to the web app
   const AuthenticatedUsers= [
-    {email:'mq700800@gmail.com', password:'123',},
-    {email:'mq768003@gmail.com', password:'123',},
-    {email:'ham1122@gmail.com', password:'123',},
+    {email:'hamza@gmail.com', password:'123',},
+    {email:'ali@gmail.com', password:'123',},
   ]
   const empty = {
     email:'',
