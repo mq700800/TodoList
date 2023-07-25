@@ -39,13 +39,43 @@ const handleAdd = (inputData) =>
   setIsAdd(false);
 }
  
+// function to logout 
+const handleLogout = () => {
+  Swal.fire({
+    title: 'Logout',
+    text: 'Are you sure you want to logout?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, logout!',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // User confirmed logout
+      setIsLogin(false);
+    }
+  });
+};
 //function to delete employee/User data
- const handleDelete = (UserID) =>
- {
-  const newData = data.filter((user) => user.id !== UserID);
-  setData(newData);
-  localStorage.setItem('employee', JSON.stringify(newData));
- }
+const handleDelete = (UserID) => {
+  Swal.fire({
+    title: 'Delete User',
+    text: 'Are you sure you want to delete this user?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // User confirmed delete
+      const newData = data.filter((user) => user.id !== UserID);
+      setData(newData);
+      localStorage.setItem('employee', JSON.stringify(newData));
+      Swal.fire('Deleted!', 'The user has been deleted.', 'success');
+    }
+  });
+};
 
     //for User Login Component
     
@@ -108,6 +138,7 @@ const handleAdd = (inputData) =>
         handleEdit,
         handleAdd,
         handleDelete,
+        handleLogout,
 
         //for User Login
         login,

@@ -14,6 +14,7 @@ function Dashboard() {
     setData,
     handleEdit,
     handleDelete,
+    handleLogout,
   } = useCustomHook();
   
  // to get data from local storage when the dashboard page first render
@@ -24,7 +25,7 @@ function Dashboard() {
     {
       setData(items);
     }
-  } ,[]);
+  } ,[setData]);
   
   //map function to display employees/Users data on table
   let no = 0;
@@ -65,7 +66,7 @@ function Dashboard() {
                 <div className='col-10'>
               <h4 className='display-5 mt-4 mb-3'>Employee Management System</h4>
               <button className='btn btn-primary mb-3 mt-1' onClick={()=>setIsAdd(true)}>Add Employee</button>
-              <button className='btn btn-outline-dark ml-3 mb-3 mt-1' onClick={()=>setIsLogin(false)} >Logout</button>
+              <button className='btn btn-outline-dark ml-3 mb-3 mt-1' onClick={handleLogout} >Logout</button>
               <table className='table table-striped'>
                 <thead>
                     <tr>
