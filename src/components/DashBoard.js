@@ -6,7 +6,6 @@ import useCustomHook from '../hooks/UseCustomHook';
 
 function Dashboard() {
   const {
-    setIsLogin,
     isEdit,
     isAdd,
     setIsAdd,
